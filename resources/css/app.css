@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+    color: darkslategrey;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
