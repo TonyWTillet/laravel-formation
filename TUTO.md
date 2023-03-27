@@ -37,4 +37,22 @@ Laravel est un framework PHP qui permet de créer des applications web. Il est b
 - Lancer la compilation
   - `npm run dev` ou `npm run watch` ou `npx mix` ou `npx mix watch`
 
+## Migration avec Laravel
+- Créer une migration  `php artisan make:migration create_users_table`
+- Les migrations se trouvent dans le dossier `database/migrations`
+- Les modèles se trouvent dans le dossier `app/Models`
+- On créer notre Model et notre migration avec la commande `php artisan make:model ModelName -m`
+- On ajoute les colonnes dans la migration
+- On lance la migration avec la commande `php artisan migrate`
+- Ou on peux rafrachir la base de données avec la commande `php artisan migrate:refresh`
+- On peut aussi rollback la dernière migration avec la commande `php artisan migrate:rollback`
 
+## Factories 
+- Sont des classes qui vont générer des données aléatoires pour nos modèles qui vont êtres insérés dans la base de données.
+- On définit les champs de notre modèle dans la factory
+- On peut créer une factory avec la commande `php artisan make:factory ModelNameFactory`
+- En important directement le Model avec php `artisan make:factory PostFactory --model=Post`
+- Avec la function definition() on génère des données à partir de notre modèle grâce à la fonction faker()
+- Le lien de la documentation de Faker : https://github.com/fzaninotto/Faker
+- On peux accéder à la création de données avec la commande `php artisan tinker`
+- Puis on génère des données avec la commande `factory(App\Models\Post::class, 10)->create();` ou `Post::factory()->count(10)->create();`
